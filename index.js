@@ -13,7 +13,7 @@
 
 var fs = require('fs');
 const { createCanvas, registerFont, loadImage, Image } = require('canvas')
-// registerFont('./font/PingFang.ttc', {family: 'PingFang'});
+registerFont('./font/PingFang.ttc', {family: 'PingFang'});
 
 //     Image = Canvas.Image,
 
