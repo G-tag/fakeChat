@@ -12,10 +12,10 @@ class FakeIos {
 
     // 绘制时间
     drawTime(time) {
-        this.CoreDraw.ctx.font = 'Bold 30px "sans-serif"'
+        this.CoreDraw.ctx.font = 'Bold 30px "STHeiti"'
         var width = this.CoreDraw.ctx.measureText(time).width
-        this.CoreDraw.drawText(time, 'Bold 24px "sans-serif"', '#fff', { x: (this.CoreDraw.getWidth() - width) / 2, y: 4 })
-        this.CoreDraw.drawText(time, 'Bold 24px "sans-serif"', '#fff', { x: (this.CoreDraw.getWidth() - width) / 2 - 0.6, y: 4 - 0.6 })
+        this.CoreDraw.drawText(time, 'Bold 24px "STHeiti"', '#fff', { x: (this.CoreDraw.getWidth() - width) / 2, y: 4 })
+        this.CoreDraw.drawText(time, 'Bold 24px "STHeiti"', '#fff', { x: (this.CoreDraw.getWidth() - width) / 2 - 0.6, y: 4 - 0.6 })
     }
 
     // 绘制wifi & 4G
@@ -23,19 +23,19 @@ class FakeIos {
         if (type) {
             this.CoreDraw.drawImage('/i-top-wifi.png', 161, 0, 30, 40); // wifi
         } else {
-            this.CoreDraw.drawText('4G', 'Medium 24px "sans-serif"', '#fff', { x: 161, y: 4 }) // 4G
+            this.CoreDraw.drawText('4G', 'Medium 24px "STHeiti"', '#fff', { x: 161, y: 4 }) // 4G
         }
     }
 
     // 计算字符长度
     strLengthWithDom(str) {
-        this.CoreDraw.ctx.font = '30px "sans-serif"'
+        this.CoreDraw.ctx.font = '30px "STHeiti"'
         return this.CoreDraw.ctx.measureText(str).width
     }
 
     // 计算字符高度
     strHeightWithDom(str) {
-        this.CoreDraw.ctx.font = '30px "sans-serif"'
+        this.CoreDraw.ctx.font = '30px "STHeiti"'
         return this.CoreDraw.ctx.measureText(str).height
     }
 
@@ -96,10 +96,10 @@ class FakeIos {
 
         if (strs.length) {
             strs.map((item, idx) => {
-                this.CoreDraw.drawText(item, 'Bold 30px "sans-serif"', '#000', { x: left + 20, y: top + 20 + 40 * idx })
+                this.CoreDraw.drawText(item, 'Bold 30px "STHeiti"', '#000', { x: left + 20, y: top + 20 + 40 * idx })
             })
         } else {
-            this.CoreDraw.drawText(text, 'Bold 30px "sans-serif"', '#000', { x: left + 20, y: top + 20 + 40 * line })
+            this.CoreDraw.drawText(text, 'Bold 30px "STHeiti"', '#000', { x: left + 20, y: top + 20 + 40 * line })
         }
         this.defaultTop += (height + 103 / 2)
     }
@@ -150,24 +150,24 @@ class FakeIos {
         this.CoreDraw.drawImage('/assets/chat_box_2/arrow.png', 633, top + 25, 12, 25);
         if (strs.length) {
             strs.map((item, idx) => {
-                this.CoreDraw.drawText(item, 'Bold 30px "sans-serif"', '#000', { x: left + 20, y: top + 20 + 40 * idx })
+                this.CoreDraw.drawText(item, 'Bold 30px "STHeiti"', '#000', { x: left + 20, y: top + 20 + 40 * idx })
             })
         } else {
-            this.CoreDraw.drawText(text, 'Bold 30px "sans-serif"', '#000', { x: left + 20, y: top + 20 + 40 * line })
+            this.CoreDraw.drawText(text, 'Bold 30px "STHeiti"', '#000', { x: left + 20, y: top + 20 + 40 * line })
         }
         this.defaultTop += (height + 103 / 2)
     }
 
     drawNickName(text) {
-        this.CoreDraw.ctx.font = 'normal 30px "sans-serif"'
+        this.CoreDraw.ctx.font = 'normal 30px "STHeiti"'
         var width = this.CoreDraw.ctx.measureText(text).width
-        this.CoreDraw.drawText(text, 'normal 38px "sans-serif"', '#fff',
+        this.CoreDraw.drawText(text, 'normal 38px "STHeiti"', '#fff',
             {
                 x: (this.CoreDraw.getWidth() - width) / 2 - 5,
                 y: 62
             }
         )
-        this.CoreDraw.drawText(text, 'normal 38px "sans-serif"', '#fff',
+        this.CoreDraw.drawText(text, 'normal 38px "STHeiti"', '#fff',
             {
                 x: (this.CoreDraw.getWidth() - width) / 2 - 5 - 0.5,
                 y: 62 - 0.5
