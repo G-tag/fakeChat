@@ -12,10 +12,10 @@ class FakeIos {
 
     // 绘制时间
     drawTime(time) {
-        this.CoreDraw.ctx.font = 'Bold 30px "PingFang SC"'
+        this.CoreDraw.ctx.font = 'Bold 30px "sans-serif"'
         var width = this.CoreDraw.ctx.measureText(time).width
-        this.CoreDraw.drawText(time, 'Bold 24px "PingFang SC"', '#fff', { x: (this.CoreDraw.getWidth() - width) / 2, y: 4 })
-        this.CoreDraw.drawText(time, 'Bold 24px "PingFang SC"', '#fff', { x: (this.CoreDraw.getWidth() - width) / 2-0.6, y: 4-0.6 })
+        this.CoreDraw.drawText(time, 'Bold 24px "sans-serif"', '#fff', { x: (this.CoreDraw.getWidth() - width) / 2, y: 4 })
+        this.CoreDraw.drawText(time, 'Bold 24px "sans-serif"', '#fff', { x: (this.CoreDraw.getWidth() - width) / 2 - 0.6, y: 4 - 0.6 })
     }
 
     // 绘制wifi & 4G
@@ -23,19 +23,19 @@ class FakeIos {
         if (type) {
             this.CoreDraw.drawImage('/i-top-wifi.png', 161, 0, 30, 40); // wifi
         } else {
-            this.CoreDraw.drawText('4G', 'Medium 24px "PingFang SC"', '#fff', { x: 161, y: 4 }) // 4G
+            this.CoreDraw.drawText('4G', 'Medium 24px "sans-serif"', '#fff', { x: 161, y: 4 }) // 4G
         }
     }
 
     // 计算字符长度
     strLengthWithDom(str) {
-        this.CoreDraw.ctx.font = '30px "PingFang SC"'
+        this.CoreDraw.ctx.font = '30px "sans-serif"'
         return this.CoreDraw.ctx.measureText(str).width
     }
 
     // 计算字符高度
     strHeightWithDom(str) {
-        this.CoreDraw.ctx.font = '30px "PingFang SC"'
+        this.CoreDraw.ctx.font = '30px "sans-serif"'
         return this.CoreDraw.ctx.measureText(str).height
     }
 
@@ -68,7 +68,7 @@ class FakeIos {
             }
 
             if (i === text.length - 1) {
-                strs.push(text.substring(lastIdx+1))
+                strs.push(text.substring(lastIdx + 1))
                 line++;
             }
         }
@@ -80,7 +80,7 @@ class FakeIos {
 
         var left = 115;
         var top = top;
-        var height = (line === 0 ? 62 : (62 + (line-1) * 40));
+        var height = (line === 0 ? 62 : (62 + (line - 1) * 40));
         var padding = chatWidth > 420 ? (10 * 2) : 0;
         // 圆角不变形
         this.CoreDraw.drawImage('/assets/chat_box_1/1.png', left, top, 7, 7);
@@ -96,15 +96,15 @@ class FakeIos {
 
         if (strs.length) {
             strs.map((item, idx) => {
-                this.CoreDraw.drawText(item, 'Bold 30px "PingFang SC"', '#000', { x: left + 20, y: top + 20 + 40 * idx })
+                this.CoreDraw.drawText(item, 'Bold 30px "sans-serif"', '#000', { x: left + 20, y: top + 20 + 40 * idx })
             })
         } else {
-            this.CoreDraw.drawText(text, 'Bold 30px "PingFang SC"', '#000', { x: left + 20, y: top + 20 + 40 * line })
+            this.CoreDraw.drawText(text, 'Bold 30px "sans-serif"', '#000', { x: left + 20, y: top + 20 + 40 * line })
         }
         this.defaultTop += (height + 103 / 2)
     }
 
-    chatBox_other_2(avatar, text) {
+     chatBox_other_2(avatar, text) {
         var left = 106
         var top = this.defaultTop
         this.drawAvatar(top, false)
@@ -124,7 +124,7 @@ class FakeIos {
             }
 
             if (i === text.length - 1) {
-                strs.push(text.substring(lastIdx+1))
+                strs.push(text.substring(lastIdx + 1))
                 line++;
             }
         }
@@ -136,7 +136,7 @@ class FakeIos {
         var padding = chatWidth > 420 ? (10 * 2) : 0;
         var left = this.CoreDraw.getWidth() - (chatWidth + padding) - 115 - 14;
         var top = top;
-        var height = (line === 0 ? 62 : (62 + (line-1) * 40));
+        var height = (line === 0 ? 62 : (62 + (line - 1) * 40));
         // 圆角不变形
         this.CoreDraw.drawImage('/assets/chat_box_2/1.png', left, top, 7, 7);
         this.CoreDraw.drawImage('/assets/chat_box_2/2.png', left + 7, top, chatWidth + padding, 7);
@@ -150,27 +150,27 @@ class FakeIos {
         this.CoreDraw.drawImage('/assets/chat_box_2/arrow.png', 633, top + 25, 12, 25);
         if (strs.length) {
             strs.map((item, idx) => {
-                this.CoreDraw.drawText(item, 'Bold 30px "PingFang SC"', '#000', { x: left + 20, y: top + 20 + 40 * idx })
+                this.CoreDraw.drawText(item, 'Bold 30px "sans-serif"', '#000', { x: left + 20, y: top + 20 + 40 * idx })
             })
         } else {
-            this.CoreDraw.drawText(text, 'Bold 30px "PingFang SC"', '#000', { x: left + 20, y: top + 20 + 40 * line })
+            this.CoreDraw.drawText(text, 'Bold 30px "sans-serif"', '#000', { x: left + 20, y: top + 20 + 40 * line })
         }
         this.defaultTop += (height + 103 / 2)
     }
 
     drawNickName(text) {
-        this.CoreDraw.ctx.font = 'Bold 30px "PingFang SC"'
+        this.CoreDraw.ctx.font = 'normal 30px "sans-serif"'
         var width = this.CoreDraw.ctx.measureText(text).width
-        this.CoreDraw.drawText(text, 'Bold 38px "PingFang SC"', '#fff',
+        this.CoreDraw.drawText(text, 'normal 38px "sans-serif"', '#fff',
             {
-                x: (this.CoreDraw.getWidth() - width) / 2 -5,
+                x: (this.CoreDraw.getWidth() - width) / 2 - 5,
                 y: 62
             }
         )
-        this.CoreDraw.drawText(text, 'Bold 38px "PingFang SC"', '#fff',
+        this.CoreDraw.drawText(text, 'normal 38px "sans-serif"', '#fff',
             {
-                x: (this.CoreDraw.getWidth() - width) / 2-5-0.5,
-                y: 62-0.5
+                x: (this.CoreDraw.getWidth() - width) / 2 - 5 - 0.5,
+                y: 62 - 0.5
             }
         )
     }
@@ -184,8 +184,9 @@ class FakeIos {
     }
 }
 
+
 var fake1 = new FakeIos()
-fake1.drawNickName('无敌美少女▲❤')
+fake1.drawNickName('无敌美少女')
 fake1.drawWifi(true)
 fake1.drawTime('上午1:56')
 
@@ -194,8 +195,8 @@ fake1.chatBox_other_1('', '@桀 鸡哥，beestore安装链接来一个呢，之�
 fake1.chatBox_other_2('', 'beestore很好用的，不需要海外ID')
 fake1.chatBox_other_1('', '吃瓜群众表示 在非官方平台下app很不放心')
 fake1.chatBox_other_2('', '老板亲自发广告?')
-fake1.chatBox_other_1('', '哈哈哈哈')
-fake1.chatBox_other_2('', '哈哈哈哈1')
+fake1.chatBox_other_1('', '测试数字英文：123 abc ABC')
+fake1.chatBox_other_1('', '测试数字英文：123 abc ABC')
 
 var stream = fake1.getDistStream()
 stream.on('data', function (chunk) {
